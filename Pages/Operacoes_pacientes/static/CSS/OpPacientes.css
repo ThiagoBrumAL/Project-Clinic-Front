@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+    ::-webkit-scrollbar{
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track{
+        margin: 45px 0;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: #00ff88;
+        border-radius: 999px;
+    }
+
+
+:root{ 
+        --my-backgorund-color:#201b2c; 
+        --my-fake-white-color:#fffafe; 
+        --my-green-color:#00ff88;
+        --header-color: #16131e;
+        --my-green-2-color: #60f9b2;
+    }
+
+*{ 
+        box-sizing: border-box; 
+        margin: 0;
+        padding: 0;
+    } 
+
+body{ 
+        font-family: "Poppins", sans-serif;
+        display: flex; 
+        flex-direction: column; 
+        overflow-x: hidden; 
+        background-color: var(--my-backgorund-color); 
+
+    }
+
+main{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    & .complementar{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+
+        & .title{
+            letter-spacing: 0;
+            line-height: 40px;
+            color: var(--my-fake-white-color);
+
+            & span{
+                color: var(--my-green-color);
+            }
+        }
+        & h1{
+            align-self: center;
+            justify-content: start;
+            font-size: 54px;
+        }
+
+    }
+}
+
+.complementar.visible{
+    display: none;
+}
+
+img{
+    width: 500px;
+    height: 500px;
+}
+
+header{ 
+        font-family: "Poppins", sans-serif;
+        width: 100vw;
+        position: sticky;
+        display: flex;
+        justify-content: space-between;
+        padding: 25px 32px;
+        background-color: #16131e;
+        z-index: 2; 
+    }
+
+.nav-menu-op-cadastro-consulta{
+    width: 100%;
+
+    & .ul-op-cadastro-consulta{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style: none;
+
+        & .back-to-home{
+            display: flex;
+            align-items: center;
+            transition: .9s;
+        }
+        & .back-to-home:hover{
+            transform: scale(1.1);
+            transition: .9s;
+        }
+
+        & li>button{
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            padding: 10px 15px;
+            border: 2px solid var(--my-green-color);
+            border-radius: 3px;
+            background-color: transparent;
+            color: var(--my-fake-white-color);
+            transition: .9s;
+        }
+        & li>button:hover{
+            background-color: var(--my-green-color);
+            color: var(--my-backgorund-color);
+            cursor: pointer;
+            transition: .9s;
+        }
+    }
+}
+a{
+    color: var(--my-fake-white-color);
+    text-decoration: none;
+    transition: .9s;
+}
+a:hover{
+        color: var(--my-green-color);
+        transition: .9s; 
+} 
+
+form{
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-form-geral{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 50%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+    & h2{
+        color: #00ff88;
+    }
+}
+
+
+
+.container-form-geral.visibleForm{
+    display: flex;
+}
+
+.wrapper{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    gap: 10px;
+
+}
+
+
+
+#formBuild{
+    height: 500px;
+    width: 100%;
+    background-color: var(--header-color);
+    color: var(--my-fake-white-color);
+    padding: 50px;
+    border-radius: 10px ;
+    box-shadow: 1px 1px 10px black;
+    display: grid;
+    grid-template-areas: 
+    "nome cpf"
+    "telefone data"
+    "sexo endereco"
+    "btn-build btn-build";
+        gap: 10px;
+
+
+    & input{
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        outline: none;
+        width: 100%;
+        background-color: var(--my-fake-white-color);
+        border: 2px solid var(--my-fake-white-color);
+        color: var(--header-color);
+
+    }
+
+    & .btn-build{
+        grid-area: btn-build;
+    }
+
+    & .nome{
+        width: 260px;
+        grid-area: nome;
+    }
+    & .telefone{
+        width: 260px;
+        grid-area: telefone;
+    }
+    & .sexo{
+        width: 260px;
+        grid-area: sexo;
+    }
+    & .endereco{
+        width: 260px;
+        grid-area: endereco;
+    }
+    & .data{
+        width: 260px;
+        grid-area: data;
+    }
+
+    
+
+    & input::placeholder{
+        color: #423a54;
+    }
+
+    & input[type=Date], input[type=time]{
+        padding: 8px;
+        color: #70648c;
+    }
+
+    & input[type=date]::-webkit-calendar-picker-indicator, input[type=time]::-webkit-calendar-picker-indicator{
+        filter: invert(69%) sepia(91%) saturate(1592%) hue-rotate(97deg) brightness(102%) contrast(101%);
+        cursor: pointer;
+    }
+
+    & button{
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        padding: 10px ;
+        width: 100%;
+        height: 50px;
+        color: var(--my-fake-white-color);
+        background-color: transparent;
+        border: 2px solid var(--my-green-color);
+        border-radius: 5px;
+        transition: .9s;
+        
+    }
+
+    & button:hover{
+        background-color: #00ff88;
+        color: #16131e;
+        transition: .9s;
+        cursor: pointer;
+    }
+
+
+}
+
+#formUpdate{
+    height: 600px;
+    width: 100%;
+    background-color: var(--header-color);
+    color: var(--my-fake-white-color);
+    padding: 50px;
+    border-radius: 10px ;
+    box-shadow: 1px 1px 10px black;
+    display: grid;
+    grid-template-areas: 
+    "id id"
+    "nome cpf"
+    "telefone data_nascimento"
+    "sexo endereco"
+    "btn-update btn-update";
+
+
+    & input{
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        outline: none;
+        width: 100%;
+        background-color: var(--my-fake-white-color);
+        border: 2px solid var(--my-fake-white-color);
+        color: var(--header-color);
+
+    }
+
+    & .id{
+        grid-area: id;
+        width: 100%;
+    }
+
+    & .btn-update{
+        grid-area: btn-update;
+    }
+
+    & .sexo{
+        width: 260px;
+        grid-area: sexo;
+    }
+    & .nome{
+        width: 260px;
+        grid-area: nome;
+    }
+    & .cpf{
+        width: 260px;
+        grid-area: cpf;
+    }
+    & .telefone{
+        width: 260px;
+        grid-area: telefone;
+    }
+    .endereco{
+        width: 260px;
+        grid-area: endereco;
+    }
+    & .data_nascimento{
+        width: 260px;
+        grid-area: data_nascimento;
+    }
+
+
+    & input::placeholder{
+        color: #423a54;
+    }
+
+    & input[type=Date], input[type=time]{
+        padding: 8px;
+        color: #70648c;
+    }
+
+    & input[type=date]::-webkit-calendar-picker-indicator, input[type=time]::-webkit-calendar-picker-indicator{
+        filter: invert(69%) sepia(91%) saturate(1592%) hue-rotate(97deg) brightness(102%) contrast(101%);
+        cursor: pointer;
+    }
+
+    & button{
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        padding: 10px ;
+        height: 50px;
+        width: 100%;
+        color: var(--my-fake-white-color);
+        background-color: transparent;
+        border: 2px solid var(--my-green-color);
+        border-radius: 5px;
+        transition: .9s;
+        grid-area: btn-update;
+    }
+
+    & button:hover{
+        background-color: #00ff88;
+        color: #16131e;
+        transition: .9s;
+        cursor: pointer;
+    }
+}
+
+#formDelete{
+    height: 250px;
+    width: 80%;
+    background-color: var(--header-color);
+    color: var(--my-fake-white-color);
+    padding: 50px;
+    border-radius: 10px ;
+    box-shadow: 1px 1px 10px black;
+
+
+    & input{
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        width: 100%;
+        outline: none;
+        background-color: var(--my-fake-white-color);
+        border: 2px solid var(--my-fake-white-color);
+        color: var(--header-color);
+
+    }
+
+    & input::placeholder{
+        color: #423a54;
+    }
+
+    & input[type=Date], input[type=time]{
+        color: #70648c;
+    }
+
+    & input[type=date]::-webkit-calendar-picker-indicator, input[type=time]::-webkit-calendar-picker-indicator{
+        filter: invert(69%) sepia(91%) saturate(1592%) hue-rotate(97deg) brightness(102%) contrast(101%);
+        cursor: pointer;
+    }
+
+    & button{
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        padding: 10px ;
+        width: 100%;
+        color: var(--my-fake-white-color);
+        background-color: transparent;
+        border: 2px solid var(--my-green-color);
+        border-radius: 5px;
+        transition: .9s;
+    }
+
+    & button:hover{
+        background-color: #00ff88;
+        color: #16131e;
+        transition: .9s;
+        cursor: pointer;
+    }
+
+
+}
+
+.mensagem-error{
+    font-size: 12px;
+    color: var(--my-green-color);
+}
+footer{ 
+        padding: 40px;
+        width: 100%;
+        background-color: #16131e;
+    }
+
+
+

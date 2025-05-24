@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integridade="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anônimo" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="static/CSS/Home.css">
+    </head>
+        <body>
+            <header>
+                <div class="logo">
+                    <h1> Clínica </h1>
+                    <h1> Fecaf </h1>
+                </div>
+                <nav class="nav-bar">
+                    <ul class="ul-menu">
+                        <li class="menu-item">
+                            <a href="#">
+                                <button class="side-bar-btn">☰</button>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">
+                                <button class="listarPagamentos" onclick="listarConsultas()">Listar Consultas</button>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#"> 
+                                <button class="listarPagamentos" onclick="listarPagamentos()">Listar Pagamentos</button> 
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">
+                                <button class="listarPagamentos" onclick="listarMedicos()">Listar médicos</button>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">
+                                <button class="listarPagamentos" onclick="listarPacientes()">Listar pacientes</button> 
+                            </a>
+                        </li>
+                    </ul> 
+                </nav>
+                    <button type="submit" class="logout" onclick="logout()">Logout &nbsp;<i class="fa-solid fa-right-from-bracket"></i></button> 
+            </header> 
+            <nav class="side-bar">
+                <div class="side-bar-container">
+                    <ul id="side-items"> 
+                        <li class="side-items">
+                            <a href="../Operacoes_pagamento/OpPagamentos.html">
+                                <i class="fa-solid fa-chart-line"></i>  
+                                <span class="item-description">Operações de pagamento</span>
+                            </a> 
+                        </li>
+                        <li class="side-items">
+                            <a href="../Operacoes_consultas/OpConsulta.html">
+                                <i class="fa-solid fa-calendar"></i> 
+                                <span class="item-description">Operações de consultas</span>
+                            </a>
+                        </li>
+                        <li class="side-items">
+                            <a href="../Operacoes_medicos/OpMedicos.html">
+                                <i class="fa-solid fa-user-doctor"></i> 
+                                <span class="item-description">Operações de medicos</span>
+                            </a>
+                        </li>
+                        <li class="side-items">
+                            <a href="../Operacoes_pacientes/OpPacientes.html">
+                                <i class="fa-solid fa-user"></i> 
+                                <span class="item-description">Operações de pacientes</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main>
+                <section class="s1">
+                    <div class="container-section-text-title">
+                        <h2>Bem vindo ao</h2>
+                        <h1>Sistema Clinica Fecaf </h1>
+                    </div>
+                    <div class="container-sobre">
+                        <div class="quem-somos">
+                            <h1>Conheça u<span>m pouco!</span></h1>
+                            <br>
+                            <p>Somos uma empresa focada na criação de softwares, como este que você está vendo agora. Esta aplicação foi desenvolvida utilizando linguagens como: <span>Java</span>, <span>JavaScript</span>, <span>CSS</span>, <span>MySQL</span> e <span>HTML</span>.</p>
+                            <br>
+                            <p> Com este sistema, conseguimos realizar operações <span>CRUD</span> (GET, POST, PUT, DELETE), graças ao framework Java denominado <span>Spring Boot</span>. Mas o que tornou tudo mais simples e organizado foi o tipo de arquitetura utilizada. Neste caso, foi adotada a <span>arquitetura em camadas</span>,com o back-end estruturado em pastas para cada responsabilidade. Por exemplo:
+                            </p>
+                            <br>
+                            <ul class="ul-text" >
+                                    <li class="ul-text">
+                                        <span>Controller</span>: utilizada para definir as rotas da aplicação;
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <span>Service</span>: responsável pela regra de negócios (lógica);
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <span>Model</span>: como o próprio nome diz, é responsável pelos modelos das tabelas do banco de dados;
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <span>Além de outras camadas como DTOs e DAOs.</span>
+                                    </li>
+                                </ul>
+                        </div>
+                        <div class="quem-somos-img">
+                            <img src="../../Assets/Hospital family visit-bro.png" alt="">
+                        </div>
+                    </div>
+                    <div class="container-section-grid-text">
+                        <table id="tabelaGeral">
+                            <thead>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>       
+        <footer>   
+        </footer>
+        <script src="Static/JS/Home.js"></script>
+    </body>
+</html>
